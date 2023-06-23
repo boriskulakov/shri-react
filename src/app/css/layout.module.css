@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex: 1 0 100px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header,
+.footer {
+  display: flex;
+  width: 100%;
+  padding: 24px 32px;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.basket {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.footer_links {
+  color: #fff;
+  font-size: 20px;
+}
