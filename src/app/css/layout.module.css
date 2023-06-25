@@ -6,31 +6,38 @@
 .header {
   position: sticky;
   top: 0;
+  order: -1;
 }
 
 .header,
 .footer {
-  display: flex;
   width: 100%;
-  padding: 24px 32px;
-  justify-content: space-between;
-  align-items: center;
+  height: 85px;
   background: #333;
   color: #fff;
+}
+
+.container {
+  height: 100%;
+  padding: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-size: 32px;
   font-weight: 700;
+  line-height: 1;
 }
 
 .basket {
   width: 32px;
   height: 32px;
-  flex-shrink: 0;
 }
 
 .footer_links {
   color: #fff;
   font-size: 20px;
+  line-height: 1;
 }

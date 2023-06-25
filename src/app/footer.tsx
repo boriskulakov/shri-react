@@ -5,12 +5,14 @@ import Link from 'next/link'
 function Footer() {
   return (
     <footer className={classNames(styles.footer)}>
-      <Link href="/questions" className={classNames(styles.footer_links)}>
-        Вопросы-ответы
-      </Link>
-      <Link href="/about" className={classNames(styles.footer_links)}>
-        О нас
-      </Link>
+      <div className={classNames(styles.container, 'page_container')}>
+        <Link href="/questions" className={classNames(styles.footer_links)}>
+          Вопросы-ответы
+        </Link>
+        <Link href="/about" className={classNames(styles.footer_links)}>
+          О нас
+        </Link>
+      </div>
     </footer>
   )
 }

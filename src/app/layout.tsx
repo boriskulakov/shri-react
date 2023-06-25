@@ -2,6 +2,7 @@ import './css/globals.css'
 import styles from './css/layout.module.css'
 import Footer from './footer'
 import Header from './header'
+import { roboto } from '@/font-variables'
 
 export const metadata = {
   title: 'Билетопоиск',
@@ -15,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body>
-        <Header />
+      <body className={roboto.variable}>
         <main className={styles.main}>{children}</main>
+        <Header />
         <Footer />
       </body>
     </html>
