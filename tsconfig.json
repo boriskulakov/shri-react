@@ -22,8 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/icons/*": ["./src/icons/*"],
-      "@/images/*": ["./src/images/*"],
+      "@/icons/*": ["./public/icons/*"],
+      "@/images/*": ["./public/images/*"],
+      "@/font-vars": ["src/font-variables.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
