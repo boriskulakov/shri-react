@@ -1,0 +1,89 @@
+.container,
+.reviews {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+  color: #1b1f23;
+}
+
+.film {
+  width: 100%;
+  padding: 24px;
+  border-radius: 8px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 32px;
+}
+
+.poster {
+  max-height: 500px;
+  border-radius: 8px;
+  background: lightgray url('../../../../../public/icons/photo.svg') no-repeat
+    center/50%;
+}
+
+.image {
+  border-radius: 8px;
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+}
+
+.info_container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+.info_text {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.info_title {
+  font-weight: 600;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.description_title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.description_text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.reviews {
+}

@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  padding: 24px;
+  gap: 32px;
+  border-radius: 8px;
+  background: #fff;
+  color: #1b1f23;
+}
+
+.avatar {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  gap: 10px;
+  border-radius: 8px;
+  background: #e0e0e0 url('../../../../../public/icons/photo.svg') no-repeat
+    center/40%;
+}
+
+.review {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.rating {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 24px;
+}
