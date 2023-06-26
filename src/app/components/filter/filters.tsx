@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import styles from './filters.module.css'
 import Select from '../select/select'
-import { SFProText } from '@/font-variables'
+import { SFProText } from '@/font-vars'
 
 const genres = [
   {

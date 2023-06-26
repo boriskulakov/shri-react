@@ -23,8 +23,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/icons/*": ["./public/icons/*"],
-      "@/images/*": ["./public/images/*"],
-      "@/font-vars": ["src/font-variables.ts"]
+      "@/font-vars": ["./src/app/utils/font-variables.ts"],
+      "@/portal": ["src/app/components/portal.tsx"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

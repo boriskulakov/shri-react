@@ -1,8 +1,8 @@
 import './css/globals.css'
 import styles from './css/layout.module.css'
-import Footer from './footer'
+import { roboto } from '@/font-vars'
 import Header from './header'
-import { roboto } from '@/font-variables'
+import Footer from './footer'
 
 export const metadata = {
   title: 'Билетопоиск',
@@ -20,6 +20,7 @@ export default function RootLayout({
         <main className={styles.main}>{children}</main>
         <Header />
         <Footer />
+        <div id="portal" className={styles.portal} />
       </body>
     </html>
   )

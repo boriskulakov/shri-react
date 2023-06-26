@@ -1,0 +1,90 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+}
+
+.modal {
+  margin: auto;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.close {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: transparent url('../../../../public/icons/close.svg') no-repeat
+    center/100%;
+  cursor: pointer;
+}
+.close:hover {
+  background-size: 110%;
+}
+
+.msg_text {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.confirm {
+  border: none;
+  color: #fff;
+  background: #f50;
+}
+.confirm:hover {
+  background: #e94e00;
+}
+
+.reject {
+  border: 1px solid #f50;
+  background-color: transparent;
+  color: #f50;
+}
+.reject:hover {
+  border: 1px solid #e94e00;
+}

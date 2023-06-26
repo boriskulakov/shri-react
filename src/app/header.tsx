@@ -11,7 +11,12 @@ function Header() {
         <Link href="/" className={classNames(styles.logo)}>
           Билетопоиск
         </Link>
-        <Image src={basket} alt="Корзина" />
+        <div className={classNames(styles.order)}>
+          <div className={classNames(styles.amount)}>0</div>
+          <Link href="/order" className={classNames(styles.basket)}>
+            <Image src={basket} alt="Корзина" />
+          </Link>
+        </div>
       </div>
     </header>
   )

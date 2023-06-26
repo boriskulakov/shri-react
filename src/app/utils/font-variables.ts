@@ -2,7 +2,7 @@ import localFont from 'next/font/local'
 import { Roboto } from 'next/font/google'
 
 export const SFProText = localFont({
-  src: '../public/font/San Francisco Pro Text/SFProText-Regular.ttf',
+  src: '../../../public/font/San Francisco Pro Text/SFProText-Regular.ttf',
   variable: '--font-san-f',
 })
 
