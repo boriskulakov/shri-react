@@ -11,10 +11,12 @@ import {
 
 function Counter({
   movieId,
+  handler,
   min = 0,
   max = 100,
 }: {
   movieId: string
+  handler?: Function
   min?: number
   max?: number
 }) {
@@ -22,12 +24,21 @@ function Counter({
   const value = useSelector((state) => selectFilmTicketsAmount(state, movieId))
   const ticketAmount = useSelector((state) => selectAllTicketsAmount(state))
 
+  const decrement = () => {
+    if (value > 1 || !handler){
+      dispatch(cartActions.decrement(movieId))
+    }
+    if (handler && value === 1) {
+      handler()
+    }
+  }
+
   return (
     <div className={classNames(styles.container)}>
       <button
         className={classNames(styles.button, styles.minus)}
         disabled={value === min}
-        onClick={() => dispatch(cartActions.decrement(movieId))}
+        onClick={decrement}
       />
       <div className={classNames(styles.value)}>{value}</div>
       <button

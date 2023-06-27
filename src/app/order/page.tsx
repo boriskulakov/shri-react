@@ -13,6 +13,7 @@ import {
   selectAllFilmWithTickets,
   selectAllTicketsAmount,
 } from '@/redux/features/cart/selector'
+import Counter from '../components/counter/counter'
 
 function Page() {
   const dispatch = useDispatch()
@@ -50,7 +51,10 @@ function Page() {
       <div className={classNames(styles.tickets)}>
         {films.map((el) => (
           <div className={classNames(styles.ticket)} key={el}>
-            <TicketCard id={el} />
+            <TicketCard id={el} withoutCounter={true} />
+            <div className={classNames(styles.counter)}>
+              <Counter movieId={el} max={30} handler={() => openModal(el)} />
+            </div>
             <button
               className={classNames(styles.close)}
               onClick={() => openModal(el)}

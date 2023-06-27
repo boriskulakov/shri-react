@@ -8,9 +8,12 @@ import basket from '@/icons/icon-basket.svg'
 import { useSelector } from 'react-redux'
 import { selectAllTicketsAmount } from '@/redux/features/cart/selector'
 
-function Header() {
+const Basket = () => {
   const ticketAmount = useSelector((state) => selectAllTicketsAmount(state))
+  return <div className={classNames(styles.amount)}>{ticketAmount}</div>
+}
 
+function Header() {
   return (
     <header className={classNames(styles.header)}>
       <div className={classNames(styles.container, 'page_container')}>
@@ -18,7 +21,7 @@ function Header() {
           Билетопоиск
         </Link>
         <div className={classNames(styles.order)}>
-          <div className={classNames(styles.amount)}>{ticketAmount}</div>
+          <Basket />
           <Link href="/order" className={classNames(styles.basket)}>
             <Image src={basket} alt="Корзина" />
           </Link>
