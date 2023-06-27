@@ -19,10 +19,14 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/icons/*": ["./public/icons/*"],
+      "@/font-vars": ["./src/app/utils/font-variables.ts"],
+      "@/portal": ["src/app/components/portal.tsx"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/redux/store.ts", "src/redux/StoreProvider.tsx", "src/redux/features/cart/selector.js"],
   "exclude": ["node_modules"]
 }
