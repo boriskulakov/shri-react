@@ -7,13 +7,19 @@ import { stylesType } from '../utils/styleTypes'
 import TicketCard from '../components/ticketCard/ticketCard'
 import Modal from '../components/modal/modal'
 import Portal from '@/portal'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartActions } from '@/redux/features/cart'
+import {
+  selectAllFilmWithTickets,
+  selectAllTicketsAmount,
+} from '@/redux/features/cart/selector'
 
 function Page() {
+  const dispatch = useDispatch()
+  const films = useSelector((state) => selectAllFilmWithTickets(state))
+  const ticketAmount = useSelector((state) => selectAllTicketsAmount(state))
+
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [ticketsId, setTicketsId] = useState([
-    '2aT976Fs_Bek0e2ZR_05V',
-    '9t2dPgRBgWpmOXRXK5l4Q',
-  ])
   const currentId = useRef('')
 
   const portalStyles: stylesType = {
@@ -29,10 +35,10 @@ function Page() {
 
   const deleteTicket = () => {
     setIsOpenModal(false)
-    setTicketsId(ticketsId.filter((el) => el !== currentId.current))
+    dispatch(cartActions.reset(currentId.current))
   }
 
-  if (ticketsId.length == 0)
+  if (films.length == 0)
     return (
       <div className={classNames(styles.container)}>
         <p>Нет добавленных билетов</p>
@@ -42,7 +48,7 @@ function Page() {
   return (
     <div className={classNames(styles.container)}>
       <div className={classNames(styles.tickets)}>
-        {ticketsId.map((el) => (
+        {films.map((el) => (
           <div className={classNames(styles.ticket)} key={el}>
             <TicketCard id={el} />
             <button
@@ -54,7 +60,7 @@ function Page() {
       </div>
       <div className={classNames(styles.total)}>
         <span className={classNames(styles.total_text)}>Итого билетов:</span>
-        <span className={classNames(styles.total_text)}>0</span>
+        <span className={classNames(styles.total_text)}>{ticketAmount}</span>
       </div>
       {isOpenModal && (
         <Portal styles={portalStyles}>

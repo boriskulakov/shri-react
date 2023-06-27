@@ -14,9 +14,11 @@ interface option {
 
 function Select({
   data,
+  type,
   placeholder,
 }: {
   data: option[]
+  type: string
   placeholder?: string
 }) {
   const [current, setCurrent] = useState('')
@@ -48,18 +50,20 @@ function Select({
       {isOpen && (
         <Portal styles={portalStyles}>
           <div className={classNames(styles.options)}>
-            {data.map((el) => (
-              <div
-                key={el.id}
-                className={classNames(styles.option)}
-                onClick={() => {
-                  setIsOpen(!isOpen)
-                  el.id === 'none' ? setCurrent('') : setCurrent(el.name)
-                }}
-              >
-                {el.name}
-              </div>
-            ))}
+            {data
+              .filter((el) => el)
+              .map((el) => (
+                <div
+                  key={el.id}
+                  className={classNames(styles.option)}
+                  onClick={() => {
+                    setIsOpen(!isOpen)
+                    el.id === 'none' ? setCurrent('') : setCurrent(el.name)
+                  }}
+                >
+                  {el.name}
+                </div>
+              ))}
           </div>
         </Portal>
       )}

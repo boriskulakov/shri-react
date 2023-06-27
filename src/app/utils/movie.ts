@@ -29,3 +29,31 @@ export const translateGenre = (genre: string): string => {
   if (genre === 'comedy') return 'Комедия'
   return '...'
 }
+
+interface genre {
+  id: string
+  name: string
+}
+
+export const genres: genre[] = [
+  {
+    id: 'none',
+    name: 'Не выбран',
+  },
+  {
+    id: 'action',
+    name: 'Боевик',
+  },
+  {
+    id: 'comedy',
+    name: 'Комедия',
+  },
+  {
+    id: 'fantasy',
+    name: 'Фэнтези',
+  },
+  {
+    id: 'horror',
+    name: 'Ужасы',
+  },
+]

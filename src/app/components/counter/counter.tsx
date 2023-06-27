@@ -1,34 +1,39 @@
 'use client'
 
-import { useState } from 'react'
 import classNames from 'classnames'
 import styles from './counter.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartActions } from '@/redux/features/cart'
+import {
+  selectFilmTicketsAmount,
+  selectAllTicketsAmount,
+} from '@/redux/features/cart/selector'
 
 function Counter({
-  initialValue = 0,
+  movieId,
   min = 0,
   max = 100,
 }: {
-  initialValue?: number
+  movieId: string
   min?: number
   max?: number
 }) {
-  const [value, setValue] = useState(initialValue)
-  const decrement = () => setValue(value - 1)
-  const increment = () => setValue(value + 1)
+  const dispatch = useDispatch()
+  const value = useSelector((state) => selectFilmTicketsAmount(state, movieId))
+  const ticketAmount = useSelector((state) => selectAllTicketsAmount(state))
 
   return (
     <div className={classNames(styles.container)}>
       <button
         className={classNames(styles.button, styles.minus)}
         disabled={value === min}
-        onClick={decrement}
+        onClick={() => dispatch(cartActions.decrement(movieId))}
       />
       <div className={classNames(styles.value)}>{value}</div>
       <button
         className={classNames(styles.button, styles.plus)}
-        disabled={value === max}
-        onClick={increment}
+        disabled={ticketAmount === max}
+        onClick={() => dispatch(cartActions.increment(movieId))}
       />
     </div>
   )
